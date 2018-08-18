@@ -1,0 +1,33 @@
+# -----------------------------------------
+# Syntax colouring for RsbLib demo library
+# -----------------------------------------
+
+# Datatypes (such as objects)
+Display_LED_lib	KEYWORD1
+
+#Methods / functions
+begin 	KEYWORD2
+Ledmode_allon KEYWORD2
+Ledmode_redon KEYWORD2
+Ledmode_amberon KEYWORD2
+Ledmode_greenon KEYWORD2
+Ledmode_knightrider KEYWORD2
+Ledmode_knightrider_2 KEYWORD2
+Ledmode_knightrider_3 KEYWORD2
+Ledmode_knightrider_4 KEYWORD2
+Ledmode_trafficlight KEYWORD2
+Ledmode_allblink KEYWORD2
+Ledmode_trafficlight_fast KEYWORD2
+Ledmode_pwm KEYWORD2
+Ledmode_random KEYWORD2
+Ledmode_random_2 KEYWORD2
+Ledmode_random_3 KEYWORD2
+Ledmode_redone KEYWORD2
+Ledmode_amberone KEYWORD2
+Ledmode_greenone KEYWORD2
+Ledmode_setup KEYWORD2
+mydelay KEYWORD2
+
+# Constants
+
+
