@@ -30,7 +30,7 @@ uint8_t mode = 1;
 void setup() {
   // Setup serial
   display_LED_lib.begin(9600);
-  Serial.println("----------- Arduino Comms up ------------");
+  //Serial.println("----------- Arduino Comms up ------------");
 
   // Setup pins for button enable internal pull-up resistors and ISR
   digitalWrite(buttonPin, HIGH);
@@ -42,8 +42,8 @@ void setup() {
 
 //******************* MAIN LOOP *****************
 void loop() {
-  //Serial.println("mode: ");
- //Serial.println(mode);
+ // Serial.println("Mode no 1-20: ");
+  //Serial.println(mode);
   switch (mode)
   {
     case 1: display_LED_lib.Ledmode_alloff(); break;
@@ -62,9 +62,9 @@ void loop() {
     case 14: display_LED_lib.Ledmode_random(); break;
     case 15: display_LED_lib.Ledmode_random_2(); break;
     case 16: display_LED_lib.Ledmode_random_3(); break;
-    case 17: display_LED_lib.Ledmode_redone(); break;
-    case 18: display_LED_lib.Ledmode_amberone(); break;
-    case 19: display_LED_lib.Ledmode_greenone(); break;
+    case 17: display_LED_lib.Ledmode_police_lights(); break;
+    case 18: display_LED_lib.Ledmode_fast_blink(); break;
+    case 19: display_LED_lib.Ledmode_pattern(); break;
     case 20: display_LED_lib.Ledmode_all(); break;
   }
 }

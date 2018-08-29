@@ -35,9 +35,9 @@ The schematic drawn in eagle is in docs folder.
 You will need following parts.
 
 >
-> ATmega328p micro-controller  as per schematic or Arduino uno/nano module.
+> ATmega328p micro-controller as per schematic or alternatively a Arduino uno/nano module.
 >
-> Resistors. 15 x 120ohms , 220ohms, 660ohms
+> Resistors. 15 x 200ohms , 220ohms, 660ohms
 >
 > LEDS. 15, 5 red , 5 amber , 5 green 
 >
@@ -68,10 +68,10 @@ The modes are
 3. All red Leds on
 4. All amber Leds on
 5. All green Leds on
-6. knight rider_1  
-7. knight rider_2
-8. knight rider_3 
-9. knight rider_4 
+6. knight rider_1  (led chaser)
+7. knight rider_2  (led chaser)
+8. knight rider_3  (led chaser)
+9. knight rider_4  (led chaser)
 10. Traffic light sequence
 11.  All LEDS Flash on and off
 12. flash red-amber-green in rapid  sequence
@@ -79,9 +79,9 @@ The modes are
 14. Random 1 led turn on and off
 15. Random 3 led turn on and off
 16. Random Multiple LEDs from each array 
-17. Lone red blink
-18. Lone amber blink
-19. Lone green blink
+17. Police car lights
+18. Rapid blink same as 11 but much faster.
+19. Fancy Pattern 
 20. all Modes combined repeat
 
 LED pin layout

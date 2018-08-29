@@ -89,26 +89,49 @@ void Display_LED_lib::Ledmode_greenon()
 void Display_LED_lib::Ledmode_knightrider()
 {
   Ledmode_alloff();
-  for (int thisPin = 0; thisPin < _pinCount; thisPin++)
+  //foward
+  for (int i = 0; i < _pinCount; i++)
   {
-    digitalWrite(_ledPinsRed[thisPin], HIGH);
+    digitalWrite(_ledPinsRed[i], HIGH);
     mydelay(_period_250);
-    // turn the pin off:
-    digitalWrite(_ledPinsRed[thisPin], LOW);
+
+    digitalWrite(_ledPinsRed[i], LOW);
   }
-  for (int thisPin = 0; thisPin < _pinCount; thisPin++)
+
+  for (int j = 0; j < _pinCount; j++)
   {
-    digitalWrite(_ledPinsAmber[thisPin], HIGH);
-   mydelay(_period_250);
-    // turn the pin off:
-    digitalWrite(_ledPinsAmber[thisPin], LOW);
-  }
-  for (int thisPin = 0; thisPin < _pinCount; thisPin++)
-  {
-    digitalWrite(_ledPinsGreen[thisPin], HIGH);
+    digitalWrite(_ledPinsAmber[j], HIGH);
     mydelay(_period_250);
-    // turn the pin off:
-    digitalWrite(_ledPinsGreen[thisPin], LOW);
+    digitalWrite(_ledPinsAmber[j], LOW);
+  }
+
+  for (int k = 0; k < _pinCount; k++)
+    {
+    digitalWrite(_ledPinsGreen[k], HIGH);
+    mydelay(_period_250);
+    digitalWrite(_ledPinsGreen[k], LOW);
+  }
+ 
+  //backward 
+    for (int n = (_pinCount-1); n > -1; n--)
+  {
+    digitalWrite(_ledPinsGreen[n], HIGH);
+    mydelay(_period_250);
+    digitalWrite(_ledPinsGreen[n], LOW);
+  }
+
+  for (int m = (_pinCount-1); m > -1; m--)
+  {
+    digitalWrite(_ledPinsAmber[m], HIGH);
+    mydelay(_period_250);
+    digitalWrite(_ledPinsAmber[m], LOW);
+  }
+
+    for (int p = (_pinCount-1); p > -1; p--)
+  {
+    digitalWrite(_ledPinsRed[p], HIGH);
+    mydelay(_period_250);
+    digitalWrite(_ledPinsRed[p], LOW);
   }
 
 }
@@ -262,61 +285,94 @@ void Display_LED_lib::Ledmode_random_3()
 }
 
 //17
-void Display_LED_lib::Ledmode_redone()
+void Display_LED_lib::Ledmode_police_lights()
 {
   Ledmode_alloff();
-  mydelay(_period_1000);
-  digitalWrite(_ledPinsRed[2], HIGH);
-  mydelay(_period_1000);
+  Ledmode_redon();
+  mydelay(_period_250);
+  Ledmode_greenon();
+  mydelay(_period_250);
 }
 
 //18
-void Display_LED_lib::Ledmode_amberone()
+void Display_LED_lib::Ledmode_fast_blink()
 {
+  Ledmode_allon();
+  mydelay(_period_100);
   Ledmode_alloff();
-  mydelay(_period_1000);
-  digitalWrite(_ledPinsAmber[2], HIGH);
-  mydelay(_period_1000);
+   mydelay(_period_100);
 }
 
 //19
-void Display_LED_lib::Ledmode_greenone()
+void Display_LED_lib::Ledmode_pattern()
 {
-  Ledmode_alloff();
-  mydelay(_period_1000);
-  digitalWrite(_ledPinsGreen[2], HIGH);
-  mydelay(_period_1000);
+	int j = 5;
+	Ledmode_alloff();
+  for (int i = 0; i < _pinCount; i++)
+  {
+    j--;
+    digitalWrite(_ledPinsRed[i], HIGH);
+    digitalWrite(_ledPinsGreen[j], HIGH);
+    mydelay(_period_250);
+    digitalWrite(_ledPinsRed[i], LOW);
+    digitalWrite(_ledPinsGreen[j], LOW);
+  }
+  
+  for(int k = 0; k < 10; k++)
+  {
+  	Ledmode_amberon();
+  	mydelay(_period_100);
+  	Ledmode_alloff();
+    mydelay(_period_100);
+  }
+
 }
 
 //20
 void Display_LED_lib::Ledmode_all()
 {
   Ledmode_allon();
+  mydelay(_period_1000);
   Ledmode_redon();
+  mydelay(_period_1000);
   Ledmode_amberon();
+  mydelay(_period_1000);
   Ledmode_greenon();
+  mydelay(_period_1000);
   Ledmode_knightrider();
   Ledmode_knightrider_2();
   Ledmode_knightrider_3();
   Ledmode_knightrider_4();
+  for(int k = 0; k < 10; k++)
+  {
+  	Ledmode_allblink();
+  }
   Ledmode_trafficlight();
-  Ledmode_allblink();
   Ledmode_trafficlight_fast();
   Ledmode_pwm();
   Ledmode_random();
   Ledmode_random_2();
   Ledmode_random_3();
-  Ledmode_redone();
-  Ledmode_amberone();
-  Ledmode_greenone();
+  for(int p = 0; p < 10; p++)
+  {
+  	 Ledmode_police_lights();
+  }
+  for(int j = 0; j < 10; j++)
+  {
+  	 Ledmode_fast_blink();
+  }
+  for(int i = 0;i < 10; i++)
+  {
+  	Ledmode_pattern();
+  }
 }
 
 //Method to replace delay with millis();
-void mydelay(int period)
+void Display_LED_lib::mydelay(int period)
 {
   unsigned long time_now = 0;
 time_now = millis();
-   while(millis() < time_now + period){
+   while(millis() - time_now <= period){
         //wait approx. [period] ms
       __asm__("nop\n\t");
     }
