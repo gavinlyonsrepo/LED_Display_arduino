@@ -26,6 +26,7 @@ Display_LED_lib display_LED_lib(true);
 // Var to hold mode
 uint8_t mode = 1;
 
+
 //*************************** SETUP ************************
 void setup() {
   // Setup serial

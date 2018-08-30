@@ -41,7 +41,7 @@ You will need following parts.
 >
 > LEDS. 15, 5 red , 5 amber , 5 green 
 >
-> one 10 k potentiometer
+> one 10 k potentiometer 
 >
 > one pushbutton
 >
@@ -49,7 +49,7 @@ You will need following parts.
 >
 > One Lm317 voltage regulator 
 >
-> Capacitors. two x 22pF, two x 100nF , 1uF
+> Capacitors. two x 22pF, three x 100nF , 1uF
 >
 
 Features
@@ -82,7 +82,7 @@ The modes are
 17. Police car lights
 18. Rapid blink same as 11 but much faster.
 19. Fancy Pattern 
-20. all Modes combined repeat
+20. Most modes combined in a repeat loop.
 
 LED pin layout
 

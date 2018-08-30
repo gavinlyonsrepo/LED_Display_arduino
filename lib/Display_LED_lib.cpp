@@ -343,7 +343,7 @@ void Display_LED_lib::Ledmode_all()
   Ledmode_knightrider_2();
   Ledmode_knightrider_3();
   Ledmode_knightrider_4();
-  for(int k = 0; k < 10; k++)
+  for(int k = 0; k < 3; k++)
   {
   	Ledmode_allblink();
   }
@@ -351,7 +351,10 @@ void Display_LED_lib::Ledmode_all()
   Ledmode_trafficlight_fast();
   Ledmode_pwm();
   Ledmode_random();
-  Ledmode_random_2();
+  for(int m = 0; m < 10; m++)
+  {
+    Ledmode_random_2();
+  }
   Ledmode_random_3();
   for(int p = 0; p < 10; p++)
   {
@@ -361,7 +364,7 @@ void Display_LED_lib::Ledmode_all()
   {
   	 Ledmode_fast_blink();
   }
-  for(int i = 0;i < 10; i++)
+  for(int i = 0;i < 5; i++)
   {
   	Ledmode_pattern();
   }
