@@ -7198,8 +7198,6 @@ Source: www.kingbright.com</description>
 <pinref part="R6" gate="G$1" pin="1"/>
 <wire x1="58.42" y1="30.48" x2="68.58" y2="30.48" width="0.1524" layer="91"/>
 <wire x1="68.58" y1="30.48" x2="58.42" y2="30.48" width="0.1524" layer="91"/>
-<junction x="68.58" y="30.48"/>
-<junction x="58.42" y="30.48"/>
 </segment>
 </net>
 <net name="N$23" class="0">
@@ -7236,7 +7234,6 @@ Source: www.kingbright.com</description>
 <wire x1="81.28" y1="71.12" x2="78.74" y2="71.12" width="0.1524" layer="91"/>
 <pinref part="R16" gate="G$1" pin="2"/>
 <wire x1="76.2" y1="71.12" x2="81.28" y2="71.12" width="0.1524" layer="91"/>
-<junction x="81.28" y="71.12"/>
 </segment>
 </net>
 <net name="N$28" class="0">

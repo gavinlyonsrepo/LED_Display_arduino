@@ -3,12 +3,12 @@
 
 Overview
 --------------------------------------------
-* Name. LED_Display_arduino
-* Title. Arduino Based LED Display unit.
-* Description. An Arduino Based LED Display unit with 15 LEDs and 20 lighting modes. 
+* Name: LED_Display_arduino
+* Title: Arduino Based LED Display unit.
+* Description: An Arduino Based LED Display unit with 15 LEDs and 20 lighting modes. 
   A Potentiometer selects mode and a push button activates selected mode.
-* Author. Gavin Lyons
-* URL. https://github.com/gavinlyonsrepo/LED_Display_arduino
+* Author: Gavin Lyons
+* URL: https://github.com/gavinlyonsrepo/LED_Display_arduino
 
 Library
 --------------------------
@@ -39,7 +39,7 @@ You will need following parts.
 >
 > Resistors. 15 x 200ohms , 220ohms, 660ohms
 >
-> LEDS. 15, 5 red , 5 amber , 5 green 
+> LEDS. (2V drop) 15, 5 red , 5 amber , 5 green 
 >
 > one 10 k potentiometer 
 >
@@ -58,6 +58,7 @@ The user selects the mode via the potentiometer whose ADC range 0->5 volts (10 b
 For each of the twenty modes. The user presses the push button to activate the mode. This starts an Interrupt service routine which reads pot value and changes the mode.  The push button is hardware de-bounced by a capacitor.
 
 There are 15 LEDs, five red, five amber, five green.
+These LED's have a 2V drop across them. so (Vs-Vd/R) = (5-2/200) = 15mA per LED for a total LED current consumption of 225mA when and if all LEDS are on.
 
 Most of the code is in a custom library developed for this project by author, called "Display_LED_lib".
 The library is in the repository. 
@@ -84,7 +85,7 @@ The modes are
 19. Fancy Pattern 
 20. Most modes combined in a repeat loop.
 
-LED pin layout
+LED Array Pin Layout
 
 | Pin Uno | Pin Atmega  | PWM  | Colour |   
 | --- | --- | --- | --- |
@@ -103,6 +104,8 @@ LED pin layout
 |  A1 | PC1  |  no |  green |   
 |  A2 | PC2  |  no | green  |   
 | A3  | PC3  |  no |  green |   
+
+
 
 ![schematic image ](https://github.com/gavinlyonsrepo/LED_Display_arduino/blob/master/docs/eagle/led_display.png)
  
