@@ -37,7 +37,7 @@ You will need following parts.
 >
 > ATmega328p micro-controller as per schematic or alternatively a Arduino uno/nano module.
 >
-> Resistors. 15 x 200ohms , 220ohms, 660ohms
+> Resistors. 15 x 200ohms , 220ohms, 660ohms, 10K
 >
 > LEDS. (2V drop) 15, 5 red , 5 amber , 5 green 
 >
