@@ -39,7 +39,7 @@ You will need following parts.
 >
 > Resistors. 15 x 200ohms , 220ohms, 660ohms, 10K
 >
-> LEDS. (2V drop) 15, 5 red , 5 amber , 5 green 
+> LEDS. (2.3V drop) 15, 5 red , 5 amber , 5 green 
 >
 > one 10 k potentiometer 
 >
@@ -58,7 +58,15 @@ The user selects the mode via the potentiometer whose ADC range 0->5 volts (10 b
 For each of the twenty modes. The user presses the push button to activate the mode. This starts an Interrupt service routine which reads pot value and changes the mode.  The push button is hardware de-bounced by a capacitor.
 
 There are 15 LEDs, five red, five amber, five green.
-These LED's have a 2.3V drop across them. so (Vs-Vd/R) = (5-2.3/200) = 15mA per LED for a total LED current consumption of 200mA when and if all LEDS are on.
+These LED's have a 2.3V drop across them. so (Vs-Vd/R) = (5-2.3/200) = 15mA per LED for a total LED current consumption of 200mA when and if all LEDS are on in theory but internal resistence of chip drivers reduces this figure slightly.
+The Maximum rated output for all GPIO pins  is 200mA so this design pushes the ATmega328p chip close to limit.
+
+Actual measured Current consumption of the entire circuit:
+
+1. 20mA, no LEDS on.
+2. 200mA, All LEDS on 
+3. 32mA, one LED on.
+
 
 Most of the code is in a custom library developed for this project by author, called "Display_LED_lib".
 The library is in the repository. 
